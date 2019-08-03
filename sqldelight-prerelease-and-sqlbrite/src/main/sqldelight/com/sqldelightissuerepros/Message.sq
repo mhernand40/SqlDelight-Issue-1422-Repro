@@ -1,0 +1,14 @@
+CREATE TABLE message(
+    id TEXT PRIMARY KEY NOT NULL,
+    text TEXT NOT NULL,
+    seen INTEGER as Boolean NOT NULL
+);
+
+select_message_by_id:
+SELECT * FROM message WHERE id = ?;
+
+insert_message:
+INSERT INTO message (id, text, seen) VALUES (?, ?, ?);
+
+update_message_seen:
+UPDATE message SET seen = ?1 WHERE id = ?2 AND seen != ?1;

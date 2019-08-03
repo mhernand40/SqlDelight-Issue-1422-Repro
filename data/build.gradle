@@ -1,0 +1,6 @@
+apply from: configs.kotlin.library
+
+dependencies {
+    api libs.domain
+    implementation libs.rxjava
+}

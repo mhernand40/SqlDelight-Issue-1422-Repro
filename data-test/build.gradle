@@ -1,0 +1,7 @@
+apply from: configs.kotlin.library
+
+dependencies {
+    implementation libs.data
+    implementation libs.junit
+    implementation libs.rxjava
+}

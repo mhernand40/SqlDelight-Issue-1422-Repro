@@ -1,0 +1,24 @@
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        classpath libs.sqldelight.prerelease.gradlePlugin
+    }
+}
+
+apply from: configs.kotlin.androidLibrary
+apply plugin: 'com.squareup.sqldelight'
+
+dependencies {
+    implementation libs.data
+    implementation libs.kotlin.stdlib
+    implementation libs.sqlbrite
+    testImplementation libs.junit
+    testImplementation libs.dataTest
+    testImplementation libs.databaseTest
+    testImplementation libs.robolectric
+    testImplementation libs.androidx.test.core
+    testImplementation libs.androidx.testExt.junit
+}

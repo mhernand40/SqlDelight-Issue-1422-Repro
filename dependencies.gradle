@@ -1,0 +1,58 @@
+ext.versions = [
+        agp: '3.4.2',
+        androidxSqlite: '2.0.0',
+        androidxTest: '1.2.0',
+        androidxTestExt: '1.1.1',
+        compileSdk: 28,
+        junit: '4.12',
+        kotlin: '1.3.31',
+        minSdk: 24,
+        robolectric: '4.3',
+        rxjava: '2.2.11',
+        sqlbrite: '3.2.0',
+        sqldelight: '1.1.4',
+        sqldelightPrerelease: '0.9.0',
+        targetSdk: '28'
+]
+
+ext.libs = [
+        agp: "com.android.tools.build:gradle:${versions.agp}",
+        androidx: [
+                sqlite: "androidx.sqlite:sqlite:${versions.androidxSqlite}",
+                sqliteFramework: "androidx.sqlite:sqlite-framework:${versions.androidxSqlite}",
+                test: [
+                        core: "androidx.test:core:$versions.androidxTest"
+                ],
+                testExt: [
+                        junit: "androidx.test.ext:junit:$versions.androidxTestExt"
+                ]
+        ],
+        data: project(':data'),
+        databaseTest: project(':database-test'),
+        dataTest: project(':data-test'),
+        domain: project(':domain'),
+        junit: "junit:junit:$versions.junit",
+        kotlin: [
+                gradlePlugin: "org.jetbrains.kotlin:kotlin-gradle-plugin:${versions.kotlin}",
+                stdlib: "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${versions.kotlin}"
+        ],
+        protobufGradlePlugin : "com.google.protobuf:protobuf-gradle-plugin:$versions.protobufGradlePlugin",
+        robolectric: "org.robolectric:robolectric:$versions.robolectric",
+        rxjava: "io.reactivex.rxjava2:rxjava:$versions.rxjava",
+        sqlbrite: "com.squareup.sqlbrite3:sqlbrite:$versions.sqlbrite",
+        sqldelight: [
+                androidDriver: "com.squareup.sqldelight:android-driver:${versions.sqldelight}",
+                gradlePlugin: "com.squareup.sqldelight:gradle-plugin:${versions.sqldelight}",
+                rxjavaExtensions: "com.squareup.sqldelight:rxjava2-extensions:$versions.sqldelight",
+                prerelease: [
+                        gradlePlugin: "com.squareup.sqldelight:gradle-plugin:${versions.sqldelightPrerelease}"
+                ]
+        ]
+]
+
+ext.configs = [
+        kotlin: [
+                'library' : "${project.rootDir}/kotlin-library.gradle",
+                'androidLibrary': "${project.rootDir}/kotlin-android-library.gradle"
+        ]
+]

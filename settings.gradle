@@ -1,0 +1,1 @@
+include ':sqldelight-1', ':sqldelight-prerelease-and-sqlbrite', ':domain', ':data', ':data-test', 'database-test'
